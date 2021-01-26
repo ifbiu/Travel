@@ -12,9 +12,12 @@
   },
   "dependencies": {
     "fastclick": "^1.0.6",
+    "path": "^0.12.7",
     "stylus": "^0.54.8",
     "stylus-loader": "^1.0.0",
+    "swiper": "^6.4.8",
     "vue": "^2.5.2",
+    "vue-awesome-swiper": "^2.6.7",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
