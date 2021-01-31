@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="(item,index) in recommendList" :key="index">
+      <li class="item border-bottom" v-for="(item,index) in list" :key="index">
         <div class="item-img-wrapper">
           <img :src="item.imgUrl" alt="" class="item-img">
         </div>
@@ -18,40 +18,11 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        }
-      ]
     }
   }
 }
@@ -60,14 +31,13 @@ export default {
 <style lang="stylus" scoped>
 @import "../../../assets/styles/mixins.styl"
 .title
-  margin-top .2rem
   line-height .8rem
   background #eee
   text-indent .2rem
 .item-img-wrapper
   overflow hidden
   height 0
-  padding-bottom 33.9%
+  padding-bottom 37.09%
   .item-img
     width 100%
 .item-info

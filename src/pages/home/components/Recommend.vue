@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="(item,index) in recommendList" :key="index">
+      <li class="item border-bottom" v-for="(item,index) in list" :key="index">
         <img :src="item.imgUrl" alt="" class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,40 +17,11 @@
 <script>
 export default {
   name: 'Recommend',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        },
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-          title: '南山滑雪场',
-          desc: '北京南山滑雪场--日场全天含雪具'
-        }
-      ]
     }
   }
 }
