@@ -1,92 +1,119 @@
 <template>
   <div class="icons">
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png" alt="">
-      </div>
-      <p class="icon-desc">热门景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/7c1e26fd490c3b65c2858fe5da96141c.png" alt="">
-      </div>
-      <p class="icon-desc">滑雪运动</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/a9d33792bd961b1692638d86cf3e6b83.png" alt="">
-      </div>
-      <p class="icon-desc">万龙滑雪场</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/5ffcd4a916f764f678263b27c1e2e00c.png" alt="">
-      </div>
-      <p class="icon-desc">天坛公园</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png" alt="">
-      </div>
-      <p class="icon-desc">热门景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/7c1e26fd490c3b65c2858fe5da96141c.png" alt="">
-      </div>
-      <p class="icon-desc">滑雪运动</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/a9d33792bd961b1692638d86cf3e6b83.png" alt="">
-      </div>
-      <p class="icon-desc">万龙滑雪场</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img class="icon-img-content" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/5ffcd4a916f764f678263b27c1e2e00c.png" alt="">
-      </div>
-      <p class="icon-desc">天坛公园</p>
-    </div>
+    <swiper>
+      <swiper-slide v-for="(page,index) in pages" :key="index">
+        <div class="icon" v-for="item in page" :key="item.id">
+          <div class="icon-img">
+            <img class="icon-img-content" :src="item.imgUrl" alt="">
+          </div>
+          <p class="icon-desc">{{item.desc}}</p>
+        </div>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 <script>
 export default {
-  name: 'HomeIcons'
+  name: 'HomeIcons',
+  data () {
+    return {
+      iconList: [
+        {
+          id: '0001',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png',
+          desc: '热门景点'
+        },
+        {
+          id: '0002',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/7c1e26fd490c3b65c2858fe5da96141c.png',
+          desc: '滑雪运动'
+        },
+        {
+          id: '0003',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/a9d33792bd961b1692638d86cf3e6b83.png',
+          desc: '万龙滑雪场'
+        },
+        {
+          id: '0004',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/5ffcd4a916f764f678263b27c1e2e00c.png',
+          desc: '天坛公园'
+        },
+        {
+          id: '0005',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png',
+          desc: '热门景点'
+        },
+        {
+          id: '0006',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png',
+          desc: '热门景点'
+        },
+        {
+          id: '0007',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png',
+          desc: '热门景点'
+        },
+        {
+          id: '0008',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png',
+          desc: '热门景点'
+        },
+        {
+          id: '0009',
+          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/557ba25df01d7dbf1419b095a11d1319.png',
+          desc: '热门景点'
+        }
+      ]
+    }
+  },
+  computed: {
+    pages () {
+      const pages = []
+      this.iconList.forEach((item, index) => {
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
 @import "../../../assets/styles/variables.styl"
-  .icons
-    overflow hidden
+@import "../../../assets/styles/mixins.styl"
+  .icons >>> .swiper-container
     height 0
     padding-bottom 50%
-    .icon
-      position relative
-      float left
-      overflow hidden
-      height 0
-      width 25%
-      padding-bottom 25%
-      .icon-img
-        position absolute
-        top 0
-        left 0
-        right 0
-        bottom .44rem
-        box-sizing border-box
-        padding .1rem
-        .icon-img-content
-          display block
-          margin 0 auto
-          height 100%
-      .icon-desc
-        position absolute
-        left 0
-        right 0
-        bottom 0
-        height .44rem
-        line-height .44rem
-        text-align center
-        color $darkTextColor
+  .icon
+    position relative
+    float left
+    overflow hidden
+    height 0
+    width 25%
+    padding-bottom 25%
+    .icon-img
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom .44rem
+      box-sizing border-box
+      padding .1rem
+      .icon-img-content
+        display block
+        margin 0 auto
+        height 100%
+    .icon-desc
+      position absolute
+      left 0
+      right 0
+      bottom 0
+      height .44rem
+      line-height .44rem
+      text-align center
+      color $darkTextColor
+      ellipsis()
 </style>
